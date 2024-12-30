@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay's blog</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <nav class="nav-wrapper">
+                <h1 class="site-title"><a href="/">Sanjay's Blog</a></h1>
+            </nav>
+        </header>
+
+        <main class="content">
+           {% block content %}
+           {% endblock %}
+        </main>
+
+        <footer class="main-footer">
+            <p>&copy; {% now "Y" %} Sanjay's Blog. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
