@@ -2,6 +2,12 @@
 
 {% block content %}
 
+       
+{% if user.is_authenticated %}       
+<a href="{% url 'post_edit' pk=post.pk %}">
+                {% include './icons/edit.svg' %}
+</a> 
+{% endif %} 
     {% if post.published_date %}
     <div class="post-meta">
         <time class="post-date">{{post.published_date}}</time>
@@ -11,5 +17,5 @@
     <div class="post-content">
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
+</article>
 {% endblock %}

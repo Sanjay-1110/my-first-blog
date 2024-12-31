@@ -15,6 +15,11 @@
         <header class="main-header">
             <nav class="nav-wrapper">
                 <h1 class="site-title"><a href="/">Sanjay's Blog</a></h1>
+                {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu">
+                    {% include './icons/add.svg' %}
+                </a>
+                {% endif %}
             </nav>
         </header>
 
